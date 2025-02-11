@@ -1,0 +1,20 @@
+name: clib-hello-world-demo
+version: 0.1.0
+compiler:
+  cc: gcc
+  cflags: -Wall -Wextra -O2
+  ldflags:
+dependencies: {}  # No dependencies for this base library
+test:
+  cflags: -Wall -Wextra
+platforms:
+  linux:
+    cflags: -fPIC
+    ldflags: -shared
+  darwin:
+    cflags: -fPIC
+    ldflags: -dynamiclib
+  windows:
+    cc: cl
+    cflags: /W4
+    ldflags: /DLL
